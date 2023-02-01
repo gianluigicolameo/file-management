@@ -35,6 +35,8 @@ public class FileManagementApplication {
 		      System.out.println("An error occurred while updating the file.");
 		      e.printStackTrace();
 		    }
+		
+		//Cancellazione
 		File file = new File("src/test/java/com/enway/prova.txt");
 		if(file.delete()) {
 			System.out.println("File deleted succesfully");
