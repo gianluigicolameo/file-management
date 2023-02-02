@@ -1,6 +1,8 @@
 package com.enway;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -35,6 +37,21 @@ public class FileManagementApplication {
 		      System.out.println("An error occurred while updating the file.");
 		      e.printStackTrace();
 		    }
+
+		
+		try {
+		      FileReader fr = new FileReader("src/test/java/com/enway/prova.txt");
+		      BufferedReader br = new BufferedReader(fr);
+		      String line;
+		      while ((line = br.readLine()) != null) {
+		        System.out.println(line);
+		      }
+		      br.close();
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
+		
+		
 		File file = new File("src/test/java/com/enway/prova.txt");
 		if(file.delete()) {
 			System.out.println("File deleted succesfully");
